@@ -1,165 +1,111 @@
+/* signup.css */
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 
 .signup-container {
+  background: white;
+  padding: 40px 30px;
   width: 100%;
   max-width: 400px;
-  background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
-.signup-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.signup-form h2 {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
-  color: #333;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.signup-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #6a11cb;
+  margin-bottom: 10px;
+}
+
+.signup-subtitle {
+  font-size: 1rem;
+  color: #555;
   margin-bottom: 20px;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.signup-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
 }
 
-.form-group label {
+.signup-form .form-group label {
   font-weight: bold;
-  color: #555;
-  display: block;
-  margin-bottom: 5px;
+  color: #333;
 }
 
-.form-group input {
+.signup-form .form-group input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 14px;
+  margin-top: 5px;
+  font-size: 1rem;
 }
 
-.password-container {
+.password-input {
   display: flex;
   align-items: center;
 }
 
-.password-container input {
-  flex: 1;
-}
-
-.toggle-password {
+.password-input .toggle-password {
+  margin-left: 10px;
   background: none;
   border: none;
-  color: #007bff;
+  color: #6a11cb;
+  font-size: 0.9rem;
   cursor: pointer;
-  font-size: 14px;
-  margin-left: 5px;
 }
 
-.submit-btn {
-  background-color: #007bff;.signup-container {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .signup-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .signup-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-  
-  .password-input {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .toggle-password {
-    background: none;
-    border: none;
-    color: #007bff;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .signup-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
-  }
-  
-  .signup-button:disabled {
-    background-color: #999;
-    cursor: not-allowed;
-  }
-  
-  @media (max-width: 480px) {
-    .signup-container {
-      padding: 15px;
-    }
-  
-    .signup-button {
-      font-size: 14px;
-      padding: 8px;
-    }
-  }
-  
-  color: #fff;
+.signup-button {
+  width: 100%;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  color: white;
+  background: #6a11cb;
+  transition: background 0.3s ease;
 }
 
-.submit-btn:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+.signup-button:hover {
+  background: #2575fc;
 }
 
-.submit-btn:hover:not(:disabled) {
-  background-color: #0056b3;
+.login-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.login-container p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.login-container .login-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #28a745;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-container .login-button:hover {
+  background: #218838;
 }

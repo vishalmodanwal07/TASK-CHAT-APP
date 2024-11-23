@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./login.css"
+import "./login.css";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -37,7 +37,7 @@ const Login = () => {
       navigate("/chats");
     } catch (error) {
       alert(`Error: ${error.response.data.message}`);
-      setLoading(false); 
+      setLoading(false);
     }
   };
 
@@ -48,57 +48,72 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2>Login to Your Account</h2>
-      <form className="login-form" onSubmit={(e) => e.preventDefault()}>
-        <div className="form-group">
-          <label htmlFor="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <div className="password-wrapper">
+      <div className="login-card">
+        <h2 className="login-title">
+          Welcome to Active-Chat! <span className="wave-emoji">👋</span>
+        </h2>
+        <p className="login-subtitle">Please log in to your account</p>
+        <form className="login-form" onSubmit={(e) => e.preventDefault()}>
+          <div className="form-group">
+            <label htmlFor="email">Email Address</label>
             <input
-              type={showPassword ? "text" : "password"}
-              id="password"
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <button
-              type="button"
-              className="toggle-password"
-              onClick={togglePasswordVisibility}
-            >
-              {showPassword ? "Hide" : "Show"}
-            </button>
           </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <div className="password-wrapper">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <button
+                type="button"
+                className="toggle-password"
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? "Hide" : "Show"}
+              </button>
+            </div>
+          </div>
+          <button
+            type="button"
+            className="login-button"
+            onClick={submitHandler}
+            disabled={loading}
+          >
+            {loading ? "Logging in..." : "Login"}
+          </button>
+          <button
+            type="button"
+            className="guest-button"
+            onClick={setGuestCredentials}
+          >
+            Use Guest Credentials
+          </button>
+        </form>
+        <div className="signup-container">
+          <p>Don't have an account?</p>
+          <button
+            type="button"
+            className="signup-button"
+            onClick={() => navigate("/signup")}
+          >
+            Sign Up
+          </button>
         </div>
-        <button
-          type="button"
-          className="login-button"
-          onClick={submitHandler}
-          disabled={loading}
-        >
-          {loading ? "Logging in..." : "Login"}
-        </button>
-        <button
-          type="button"
-          className="guest-button"
-          onClick={setGuestCredentials}
-        >
-          Use Guest Credentials
-        </button>
-      </form>
+      </div>
     </div>
   );
 };
 
-export default  Login;
+export default Login;

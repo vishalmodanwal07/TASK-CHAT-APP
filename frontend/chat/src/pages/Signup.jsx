@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./signup.css"
+import "./signup.css";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -45,7 +45,8 @@ const Signup = () => {
 
   return (
     <div className="signup-container">
-      <h2>Create an Account</h2>
+      <h2 className="signup-title">Welcome to Active Chat! 👋</h2>
+      <p className="signup-subtitle">Create an account to get started</p>
       <form className="signup-form">
         <div className="form-group">
           <label htmlFor="name">Name</label>
@@ -108,6 +109,16 @@ const Signup = () => {
         >
           {isLoading ? "Submitting..." : "Sign Up"}
         </button>
+        <div className="login-container">
+          <p>Already have an account?</p>
+          <button
+            type="button"
+            className="login-button"
+            onClick={() => navigate("/login")}
+          >
+            Login
+          </button>
+        </div>
       </form>
     </div>
   );

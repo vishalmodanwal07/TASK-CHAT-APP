@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Signup from "../pages/Signup"; // Ensure correct path
 import Login from "../pages/Login"; // Ensure correct path
-import "./Homepage.css"; // Ensure the CSS file is included
+import "./Homepage.css"; // Include the CSS file
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -15,37 +15,28 @@ const Homepage = () => {
 
   return (
     <div className="homepage-container">
-      <div className="header">
-        <h1 className="title">Talk-A-Tive</h1>
-      </div>
-      <div className="tabs-container">
-        <div className="tabs">
-          {/* Tabs for switching between Login and Signup */}
-          <button
-            className={`tab ${activeTab === "login" ? "active" : ""}`}
-            onClick={() => setActiveTab("login")}
-          >
-            Login
-          </button>
-          <button
-            className={`tab ${activeTab === "signup" ? "active" : ""}`}
-            onClick={() => setActiveTab("signup")}
-          >
-            Sign Up
-          </button>
-        </div>
-        <div className="tab-content">
-          {/* Render Login or Signup based on activeTab */}
-          {activeTab === "login" && (
-            <div className="tab-panel">
-              <Login />
-            </div>
-          )}
-          {activeTab === "signup" && (
-            <div className="tab-panel">
-              <Signup />
-            </div>
-          )}
+      <div className="homepage-card">
+        <h1 className="title">Welcome to Talk-A-Tive</h1>
+        <p className="subtitle">Connect and communicate effortlessly</p>
+        <div className="tabs-container">
+          <div className="tabs">
+            <button
+              className={`tab ${activeTab === "login" ? "active" : ""}`}
+              onClick={() => setActiveTab("login")}
+            >
+              Login
+            </button>
+            <button
+              className={`tab ${activeTab === "signup" ? "active" : ""}`}
+              onClick={() => setActiveTab("signup")}
+            >
+              Sign Up
+            </button>
+          </div>
+          <div className="tab-content">
+            {activeTab === "login" && <Login />}
+            {activeTab === "signup" && <Signup />}
+          </div>
         </div>
       </div>
     </div>
