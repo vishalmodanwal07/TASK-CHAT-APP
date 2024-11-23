@@ -6,10 +6,12 @@ const userRoutes =require("./routes/userRoutes.js");
 const cors = require('cors');
 const connectDB = require("./config/db.js");
 const app = express();
-connectDB();
-
-
 app.use(cors());
+connectDB();
+app.use(express.json())
+
+
+
 
 
 app.get("/" , (req, res)=>{
