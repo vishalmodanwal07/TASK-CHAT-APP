@@ -1,10 +1,16 @@
+const dotenv = require("dotenv");
+dotenv.config();
 const express =require("express");
 const { chats } = require("./data/data");
-const dotenv = require("dotenv");
+
 const cors = require('cors');
-const app = express()
-dotenv.config();
+const connectDB = require("./config/db.js");
+const app = express();
+connectDB();
+
+
 app.use(cors());
+
 
 app.get("/" , (req, res)=>{
     res.send("api is runing successfully");
