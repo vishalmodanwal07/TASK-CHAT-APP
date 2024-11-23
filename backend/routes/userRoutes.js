@@ -1,9 +1,9 @@
- const express =require("express");
- const {registerUser , authUser} =require("../controllers/userControllers.js")
- 
- const router = express.Router();
+const express =require("express");
+const {registerUser , authUser} =require("../controllers/userControllers.js")
 
- router.route("/").post(registerUser)
- router.post("/login" , authUser)
+const router = express.Router();
 
- module.exports=router;
+router.route("/").post(registerUser)
+router.post("/login" , authUser)
+
+module.exports=router;
