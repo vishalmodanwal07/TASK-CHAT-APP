@@ -1,7 +1,7 @@
-import  { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Signup from "../../pages/Signup"; // Ensure correct path
-import Login from "../../pages/Login"; // Ensure correct path
+import Signup from "../pages/Signup"; // Ensure correct path
+import Login from "../pages/Login"; // Ensure correct path
 import "./Homepage.css"; // Include the CSS file
 
 const Homepage = () => {
