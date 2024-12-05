@@ -20,7 +20,7 @@ app.get("/" , (req, res)=>{
     res.send("api is runing successfully");
 });
 
-app.get("/api/chat" , (req, res)=>{
+app.get("/api/chats" , (req, res)=>{
     res.send(chats)
 });
 

@@ -1,14 +1,21 @@
+// Import default styles
 
-import './App.css'
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/Homepage/Homepage";
+import Chatpage from "./pages/ChatPage/Chatpage";
+
 
 function App() {
-  
+
 
   return (
-    <>
-   <h1 className='bg-green-600'>hello</h1>
-    </>
-  )
+    
+      <Routes>
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="/chats" element={<Chatpage/>}/>
+      </Routes>
+   
+  );
 }
 
-export default App
+export default App;
