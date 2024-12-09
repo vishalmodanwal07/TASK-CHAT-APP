@@ -4,9 +4,11 @@ import { toast } from "react-toastify";
 import { getSender } from "../config/Chatlogic";
 import "react-toastify/dist/ReactToastify.css";
 import { ChatState } from "../context/Chatprovider";
+import GroupChatModal from "./GroupChatModal";
 
 const MyChats = () => {
   const [loggedUser, setLoggedUser] = useState();
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { selectedChat, setSelectedChat, user, chats, setChats } = ChatState();
 
   const fetchChats = async () => {
@@ -56,9 +58,15 @@ const MyChats = () => {
       {/* Header Section */}
       <div className="flex items-center justify-between w-full pb-4 border-b">
         <h2 className="text-xl font-semibold text-gray-800">My Chats</h2>
-        <button className="bg-teal-500 text-white px-4 py-1 rounded-lg text-sm hover:bg-teal-600">
+        <GroupChatModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+        <button className="bg-teal-500 text-white px-4 py-1 rounded-lg text-sm hover:bg-teal-600"
+         onClick={() => setIsModalOpen(true)}>
           New Group Chat
         </button>
+      
       </div>
 
       {/* Chats Section */}
